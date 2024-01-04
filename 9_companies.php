@@ -15,11 +15,27 @@ yes -->
 
 
 <?php
-$N = intval(trim(fgets(STDIN)));
+$number = intval(trim(fgets(STDIN)));
+$array = [];
 
-// Leggi le stringhe in un array e verifica se contengono almeno una vocale         //se tutte le stringhe precedenti e quella attuale contengono almeno una vocale, il risultato sarà true, altrimenti sarà false.
-$allVowel = array_reduce(array_map('trim', array_slice(file('php://stdin'), 1, $N)), fn($carry, $str) => $carry && strpbrk($str, 'aeiou') !== false, true);
+// Leggi le stringhe in un array
+for ($i = 0; $i < $number; $i++) {
+    $array[] = trim(fgets(STDIN));
+}
 
-// Stampa "yes" se tutte le stringhe contengono almeno una vocale, altrimenti "no"
+$vowels = array('a', 'e', 'i', 'o', 'u');
+$allVowel = true;
+
+for ($i = 0; $i < count($array); $i++) {
+    $stringa = $array[$i];
+    
+    // Controlla se la parola contiene almeno una vocale
+    if (!ctype_alpha($stringa) || !strpbrk($stringa, implode('', $vowels))) {
+        $allVowel = false;
+        break; // Interrompo il ciclo se almeno una parola non ha vocali
+    }
+}
+
+// Stampa "yes" se tutte le parole contengono almeno una vocale, altrimenti "no"
 echo $allVowel ? "yes" : "no";
 ?>
