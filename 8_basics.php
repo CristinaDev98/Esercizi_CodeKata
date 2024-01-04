@@ -1,4 +1,4 @@
-<!-- 
+<!-- CODEKATA N.8  EX:BASICS
     
 Write a code to get 2 integers A and N. Print the integer A, N times in separate line.
 
