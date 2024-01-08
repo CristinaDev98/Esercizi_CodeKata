@@ -1,6 +1,4 @@
-<!-- CODEWARS N.12  EX:EVEN OR ODD
-    
-Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers. -->
+<!-- CODEWARS N.12  EX:EVEN OR ODD -->
 
 <?php
 
